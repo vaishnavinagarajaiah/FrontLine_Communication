@@ -115,6 +115,20 @@
       </tr>
  
     </table>
+    <table id="communication_table_export" style="visibility: hidden">
+        <tr>
+          <th>FISCAL WEEK</th>
+          <th>SubMarket</th>
+          <th>AL4</th>
+          <th>AL3</th>
+          <th>AL2</th>
+          <th>AL1</th>
+          <th>ARLO_COMB - 2 + 7 + 2 = 11digits</th>
+          <th>BL4</th>
+          <th>Communication</th>
+        </tr>
+   
+      </table>
   </br>
   <div class="row">
       <div class="col-md-6">
@@ -201,12 +215,13 @@
 
       $("#export").click(function () {
     
-        $("#communication_table").table2csv();
+        $("#communication_table_export").table2csv();
         return false;
       });
 
       $("#delete_row").click(function () {
         var rowCount = $('#communication_table tr').length;
+        var rowCount_export = $('#communication_table_export tr').length;
         if(rowCount>1){
         $('tr:last-child').remove();
         }
@@ -224,10 +239,16 @@
         var al3_text = $('#al3').find('option:selected').toArray().map(item => item.text).join(';');
         var BL_text = $('#brand').find('option:selected').toArray().map(item => item.text).join(';');
         var communication_text = $('#communication_text').val();
-
-        console.log(planweek_text.concat(submarket_text,al4_text,al3_text,BL_text,communication_text))
+        var submarket_id = $('#submarket').find('option:selected').toArray().map(item => item.value).join(';');
+        var al4_id = $('#al4').find('option:selected').toArray().map(item => item.value).join(';');
+        var al3_id = $('#al3').find('option:selected').toArray().map(item => item.value).join(';');
+        var BL_id = $('#brand').find('option:selected').toArray().map(item => item.value).join(';');
+        //console.log(planweek_text.concat(submarket_text,al4_text,al3_text,BL_text,communication_text))
+       
         $('#communication_table tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_text+'</td><td>'+al4_text+'</td><td>'+al3_text+'</td><td></td><td></td><td></td><td>'+BL_text+'</td><td>'+communication_text+'</td></tr>');
         //$('#communication_table tr:last').after('<tr><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td></tr>');
+        $('#communication_table_export tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_id+'</td><td>'+al4_id+'</td><td>'+al3_id+'</td><td></td><td></td><td></td><td>'+BL_id+'</td><td>'+communication_text+'</td></tr>');
+       
       }
     </script>
 
