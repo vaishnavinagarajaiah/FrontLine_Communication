@@ -1,0 +1,146 @@
+[
+  {
+    "Submarket_Name": "CENTRAL EAST",
+    "Submarket_ID": 123
+  },
+  {
+    "Submarket_Name": "CENTRAL METRO",
+    "Submarket_ID": 5010
+  },
+  {
+    "Submarket_Name": "CENTRAL NON DSD",
+    "Submarket_ID": 11
+  },
+  {
+    "Submarket_Name": "CENTRAL NORTH",
+    "Submarket_ID": 8664
+  },
+  {
+    "Submarket_Name": "CENTRAL SNACK IMPORT",
+    "Submarket_ID": 107
+  },
+  {
+    "Submarket_Name": "CENTRAL SOUTH",
+    "Submarket_ID": 27
+  },
+  {
+    "Submarket_Name": "CENTRAL WEST",
+    "Submarket_ID": 114
+  },
+  {
+    "Submarket_Name": "ARIZONA-NEW MEXICO",
+    "Submarket_ID": 50
+  },
+  {
+    "Submarket_Name": "COLORADO",
+    "Submarket_ID": 37
+  },
+  {
+    "Submarket_Name": "MOUNTAIN WEST",
+    "Submarket_ID": 113
+  },
+  {
+    "Submarket_Name": "WASHINGTON-OREGON",
+    "Submarket_ID": 55
+  },
+  {
+    "Submarket_Name": "CAPITAL WEST",
+    "Submarket_ID": 44
+  },
+  {
+    "Submarket_Name": "EASTERN NY-NEWENGLD",
+    "Submarket_ID": 40
+  },
+  {
+    "Submarket_Name": "METRO",
+    "Submarket_ID": 80
+  },
+  {
+    "Submarket_Name": "METRO EAST",
+    "Submarket_ID": 80
+  },
+  {
+    "Submarket_Name": "METRO WEST",
+    "Submarket_ID": 81
+  },
+  {
+    "Submarket_Name": "MID-ATL CAPITAL",
+    "Submarket_ID": 44
+  },
+  {
+    "Submarket_Name": "MID-ATL PENN-E OHIO",
+    "Submarket_ID": 13
+  },
+  {
+    "Submarket_Name": "MID-ATL PHILLY",
+    "Submarket_ID": 46
+  },
+  {
+    "Submarket_Name": "PENN EAST OHIO",
+    "Submarket_ID": 13
+  },
+  {
+    "Submarket_Name": "PHILLY",
+    "Submarket_ID": 46
+  },
+  {
+    "Submarket_Name": "SOUTHERN NEW ENGLAND",
+    "Submarket_ID": 38
+  },
+  {
+    "Submarket_Name": "WEST CENTRAL NY",
+    "Submarket_ID": 43
+  },
+  {
+    "Submarket_Name": "PACIFIC BIM MAR",
+    "Submarket_ID": 59
+  },
+  {
+    "Submarket_Name": "PACIFIC CENTRAL",
+    "Submarket_ID": 48
+  },
+  {
+    "Submarket_Name": "PACIFIC NORTH",
+    "Submarket_ID": 109
+  },
+  {
+    "Submarket_Name": "PACIFIC SOUTH",
+    "Submarket_ID": 111
+  },
+  {
+    "Submarket_Name": "SC-HOUSTON",
+    "Submarket_ID": 61
+  },
+  {
+    "Submarket_Name": "SOUTH CAROLINAS",
+    "Submarket_ID": 20
+  },
+  {
+    "Submarket_Name": "SOUTH FLORIDA",
+    "Submarket_ID": 19
+  },
+  {
+    "Submarket_Name": "SOUTH-CENTRAL",
+    "Submarket_ID": 18
+  },
+  {
+    "Submarket_Name": "SOUTH-EXPRESS EAST",
+    "Submarket_ID": 52
+  },
+  {
+    "Submarket_Name": "SOUTH-EXPRESS WEST",
+    "Submarket_ID": 130
+  },
+  {
+    "Submarket_Name": "SOUTH-NORTHWEST",
+    "Submarket_ID": 60
+  },
+  {
+    "Submarket_Name": "SOUTH-OHIO VALLEY",
+    "Submarket_ID": 134
+  },
+  {
+    "Submarket_Name": "SOUTH-SOUTHWEST",
+    "Submarket_ID": 61
+  }
+]

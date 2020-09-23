@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="bootstrap-duallistbox.css" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.0/jquery.min.js"></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.min.js"></script>
+    <script src="jquery.bootstrap-duallistbox.js"></script>
+    <script src="table2csv.min.js"></script>
+
+    <title>Frontline Communication Builder</title>
+    <style>
+      table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+
+      td,
+      th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+
+      tr:nth-child(even) {
+        background-color: #dddddd;
+      }
+    </style>
+  </head>
+  <body class="container">
+    <h1 style="text-align: center;">Frontline Communication Builder</h1>
+    <div class="row">
+      <strong>
+        <div class="col-md-4">
+          <p id="thisDate">Today is</p>
+        </div>
+        <div class="col-md-4" style="text-align: center;">
+          <p id="currentWeek">Current Week:</p>
+        </div>
+        <div class="col-md-4" style="text-align: right;">
+          <p id="planWeek">Plan Week:</p>
+        </div>
+      </strong>
+    </div>
+    <h3>Choose Submarket - Required</h3>
+    <form id="demoform" action="#" method="post">
+      <select
+        id="submarket"
+        multiple="multiple"
+        size="10"
+        name="duallistbox_demo1[]"
+      >
+      </select>
+      <br />
+      <h3 data-toggle="collapse" data-target="#AL4collapse">
+        Choose Account Level 4 (Click to expand / collapse)
+      </h3>
+      <div id="AL4collapse" class="collapse">
+        <select id="al4" multiple="multiple" size="10" name="al4"> </select>
+      </div>
+      <h3 data-toggle="collapse" data-target="#AL3collapse">
+        Choose Account Level 3 (Click to expand / collapse)
+      </h3>
+      <div id="AL3collapse" class="collapse">
+        <select id="al3" multiple="multiple" size="10" name="al3"> </select>
+      </div>
+      <h3>Choose Brands - Required</h3>
+      <select id="brand" multiple="multiple" size="10" name="brand"> </select>
+      <div class="row">
+        <div class="col-md-6">
+          <h3>Communication - Limit to 75-100 Characters</h3>
+        </div>
+        <div class="col-md-6" style="text-align: right;">
+          <h3 style="display: inline-block;">Character Count</h3>
+          <strong>
+            <h3 id="charNum" style="display: inline-block;">0</h3>
+          </strong>
+        </div>
+      </div>
+      <textarea class="form" id="communication_text" onkeyup="countChar(this)"></textarea>
+    </br>
+    <div class="row">
+      <div class="col-md-6">
+          </div>
+    <div class="col-md-6" style="text-align: right">
+        <button type="submit" class="btn btn-default btn-block" style="background-color: rgb(175, 104, 76);width: 50%;float:right"">
+            Add Communication
+          </button>
+    </div>
+  </div>
+    </br>
+    </form>
+    <table id="communication_table">
+      <tr>
+        <th>FISCAL WEEK</th>
+        <th>SubMarket</th>
+        <th>AL4</th>
+        <th>AL3</th>
+        <th>AL2</th>
+        <th>AL1</th>
+        <th>ARLO_COMB - 2 + 7 + 2 = 11digits</th>
+        <th>BL4</th>
+        <th>Communication</th>
+      </tr>
+ 
+    </table>
+  </br>
+  <div class="row">
+      <div class="col-md-6">
+          <button id="delete_row" class="btn btn-default btn-block" style="background-color: rgb(235, 8, 8);width: 50%;color: white">
+              Delete Row
+             </button>
+          </div>
+    <div class="col-md-6" style="text-align: right">
+        <button id="export" class="btn btn-default btn-block" style="background-color: #4CAF50;width: 50%;float:right">
+            Export to CSV
+           </button>
+    </div>
+  </div>
+   
+    <script>
+      //assuign selector variables for dualistbox binding
+      let submarket = $("#submarket");
+      let brand = $("#brand");
+      let al4 = $("#al4");
+      let al3 = $("#al3");
+
+      // URL consstants
+      const submarket_url = "submarket.json";
+      const brand_url = "brand.json";
+      const al4_url = "al4.json";
+      const al3_url = "al3.json";
+
+      // Populate dropdown with list of Submarkets
+      $.getJSON(submarket_url, function (data) {
+        $.each(data, function (key, entry) {
+          submarket.append(
+            $("<option></option>")
+              .attr("value", entry.Submarket_ID)
+              .text(entry.Submarket_Name)
+          );
+        });
+
+        submarket.bootstrapDualListbox();
+      });
+
+      //AL4
+      $.getJSON(al4_url, function (data) {
+        $.each(data, function (key, entry) {
+          al4.append(
+            $("<option></option>")
+              .attr("value", entry.CUST_LEVEL4_ID)
+              .text(entry.CUST_LEVEL4_NAME)
+          );
+        });
+
+        al4.bootstrapDualListbox();
+      });
+
+      //AL3
+      $.getJSON(al3_url, function (data) {
+        $.each(data, function (key, entry) {
+          al3.append(
+            $("<option></option>")
+              .attr("value", entry.CUST_LEVEL3_ID)
+              .text(entry.CUST_LEVEL3_NAME)
+          );
+        });
+
+        al3.bootstrapDualListbox();
+      });
+
+      // Populate dropdown with list of Brand
+      $.getJSON(brand_url, function (data) {
+        $.each(data, function (key, entry) {
+          brand.append(
+            $("<option></option>")
+              .attr("value", entry.BL4_ID)
+              .text(entry.BL4_name)
+          );
+        });
+
+        brand.bootstrapDualListbox();
+      });
+
+      $("#demoform").submit(function () {
+        addCommunication();
+        return false;
+      });
+
+      $("#export").click(function () {
+    
+        $("#communication_table").table2csv();
+        return false;
+      });
+
+      $("#delete_row").click(function () {
+        var rowCount = $('#communication_table tr').length;
+        if(rowCount>1){
+        $('tr:last-child').remove();
+        }
+        return false;
+      });
+      function countChar(val) {
+        var len = val.value.length;
+        $("#charNum").text(len);
+      }
+
+      function addCommunication(){
+        var planweek_text = planWeekString;
+        var submarket_text = $('#submarket').find('option:selected').toArray().map(item => item.text).join(';');
+        var al4_text = $('#al4').find('option:selected').toArray().map(item => item.text).join(';');
+        var al3_text = $('#al3').find('option:selected').toArray().map(item => item.text).join(';');
+        var BL_text = $('#brand').find('option:selected').toArray().map(item => item.text).join(';');
+        var communication_text = $('#communication_text').val();
+
+        console.log(planweek_text.concat(submarket_text,al4_text,al3_text,BL_text,communication_text))
+        $('#communication_table tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_text+'</td><td>'+al4_text+'</td><td>'+al3_text+'</td><td></td><td></td><td></td><td>'+BL_text+'</td><td>'+communication_text+'</td></tr>');
+        //$('#communication_table tr:last').after('<tr><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td></tr>');
+      }
+    </script>
+
+    <script>
+      //Get Week Number in ISO8601 format
+
+      function ISO8601_week_no(dt) {
+        var tdt = new Date(dt.valueOf());
+        var dayn = (dt.getDay() + 6) % 7;
+        tdt.setDate(tdt.getDate() - dayn + 3);
+        var firstThursday = tdt.valueOf();
+        tdt.setMonth(0, 1);
+        if (tdt.getDay() !== 4) {
+          tdt.setMonth(0, 1 + ((4 - tdt.getDay() + 7) % 7));
+        }
+        return 1 + Math.ceil((firstThursday - tdt) / 604800000);
+      }
+
+      //Today's Date
+      var new_date = new Date();
+      document.getElementById(
+        "thisDate"
+      ).innerHTML += new_date.toLocaleDateString("en-US");
+
+      //Set Week counter adaptation for Current and Plan
+      var plan_date = new Date();
+      document.getElementById("currentWeek").innerHTML +=
+        plan_date.getFullYear().toString() +
+        ISO8601_week_no(plan_date).toString();
+      plan_date.setDate(new_date.getDate() + 14);
+      //Set Planweek String
+      var planWeekString =
+        plan_date.getFullYear().toString() +
+        ISO8601_week_no(plan_date).toString();
+      document.getElementById("planWeek").innerHTML += planWeekString;
+    </script>
+  </body>
+</html>
