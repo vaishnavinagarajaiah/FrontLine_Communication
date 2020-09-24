@@ -246,6 +246,12 @@
         var al3_id = $('#al3').find('option:selected').toArray().map(item => item.value).join(';');
         var BL_id = $('#brand').find('option:selected').toArray().map(item => item.value).join(';');
         //console.log(planweek_text.concat(submarket_text,al4_text,al3_text,BL_text,communication_text))
+
+        //Allow only the lowest AL
+        if(al3_id.length > 0){
+          al4_id = '';
+          al4_text = '';
+        }
        
         $('#communication_table tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_text+'</td><td>'+al4_text+'</td><td>'+al3_text+'</td><td></td><td></td><td></td><td>'+BL_text+'</td><td>'+communication_text+'</td></tr>');
         //$('#communication_table tr:last').after('<tr><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td></tr>');
