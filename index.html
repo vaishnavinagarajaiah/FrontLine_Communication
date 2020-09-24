@@ -116,7 +116,19 @@
       </tr>
  
     </table>
-    <table id="communication_table_export" style="display: none">
+    <div class="row">
+        <div class="col-md-6">
+            <button id="delete_row" class="btn btn-default btn-block" style="background-color: rgb(235, 8, 8);width: 50%;color: white">
+                Delete Row
+               </button>
+            </div>
+      <div class="col-md-6" style="text-align: right">
+          <button id="export" class="btn btn-default btn-block" style="background-color: #4CAF50;width: 50%;float:right">
+              Export to CSV
+             </button>
+      </div>
+    </div>
+    <table id="communication_table_export" style="visibility: hidden">
         <tr>
           <th>FISCAL WEEK</th>
           <th>SubMarket</th>
@@ -131,18 +143,7 @@
    
       </table>
   </br>
-  <div class="row">
-      <div class="col-md-6">
-          <button id="delete_row" class="btn btn-default btn-block" style="background-color: rgb(235, 8, 8);width: 50%;color: white">
-              Delete Row
-             </button>
-          </div>
-    <div class="col-md-6" style="text-align: right">
-        <button id="export" class="btn btn-default btn-block" style="background-color: #4CAF50;width: 50%;float:right">
-            Export to CSV
-           </button>
-    </div>
-  </div>
+
    
     <script>
       //assuign selector variables for dualistbox binding
