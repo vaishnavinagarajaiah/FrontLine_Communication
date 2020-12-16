@@ -317,25 +317,48 @@
         if (tdt.getDay() !== 4) {
           tdt.setMonth(0, 1 + ((4 - tdt.getDay() + 7) % 7));
         }
-        return 1 + Math.ceil((firstThursday - tdt) / 604800000);
+        week_num = 1 + Math.ceil((firstThursday - tdt) / 604800000);
+        if(week_num.toString().length == 1){
+          console.log("gothere");
+          return 0+week_num.toString();
+
+        }
+        else{
+          return week_num.toString();
+        }
+        
       }
+      
+ 
 
       //Today's Date
       var new_date = new Date();
+      var plan_date = new Date();
       document.getElementById(
         "thisDate"
       ).innerHTML += new_date.toLocaleDateString("en-US");
 
       //Set Week counter adaptation for Current and Plan
-      var plan_date = new Date();
+      var current_week_date = new Date();
+      
+      if(ISO8601_week_no(current_week_date)== 53 || current_week_date.getFullYear() == 2021){
+        current_week_date.setDate(new_date.getDate()+7);
+      }
+
       document.getElementById("currentWeek").innerHTML +=
-        plan_date.getFullYear().toString() +
-        ISO8601_week_no(plan_date).toString();
-      plan_date.setDate(new_date.getDate() + 14);
+        current_week_date.getFullYear().toString() +
+        ISO8601_week_no(current_week_date);
+      
+      plan_date.setDate(current_week_date.getDate() + 14);
+      if(ISO8601_week_no(plan_date) == "53"){
+        plan_date.setDate(plan_date.getDate() + 7);
+      }
+
       //Set Planweek String
       var planWeekString =
         plan_date.getFullYear().toString() +
-        ISO8601_week_no(plan_date).toString();
+        ISO8601_week_no(plan_date);
+   
       document.getElementById("planWeek").innerHTML += planWeekString;
     </script>
   </body>
