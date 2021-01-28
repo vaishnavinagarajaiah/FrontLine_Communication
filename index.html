@@ -319,7 +319,7 @@
         }
         week_num = 1 + Math.ceil((firstThursday - tdt) / 604800000);
         if(week_num.toString().length == 1){
-          console.log("gothere");
+          console.log("gothere "+ week_num.toString());
           return 0+week_num.toString();
 
         }
@@ -341,20 +341,25 @@
       //Set Week counter adaptation for Current and Plan
       var current_week_date = new Date();
       
-      if(ISO8601_week_no(current_week_date)== 53 || current_week_date.getFullYear() == 2021){
-        current_week_date.setDate(new_date.getDate()+7);
-      }
+      //if(ISO8601_week_no(current_week_date)== 53 || current_week_date.getFullYear() == 2021){
+        //current_week_date.setDate(new_date.getDate()+7);
+      //}
 
       document.getElementById("currentWeek").innerHTML +=
         current_week_date.getFullYear().toString() +
         ISO8601_week_no(current_week_date);
       
-      plan_date.setDate(current_week_date.getDate() + 14);
+        //console.log("current_week_Date "+ current_week_date.toString());
+      plan_date.setDate(current_week_date.getDate() + 21);
+      //console.log("plan_week_Date "+   plan_date.toString());
+      
       if(ISO8601_week_no(plan_date) == "53"){
+       // console.log("got here3");
         plan_date.setDate(plan_date.getDate() + 7);
       }
 
       //Set Planweek String
+      console.log("planWeekSTring "+ plan_date.toString());
       var planWeekString =
         plan_date.getFullYear().toString() +
         ISO8601_week_no(plan_date);
