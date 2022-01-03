@@ -317,7 +317,7 @@
         if (tdt.getDay() !== 4) {
           tdt.setMonth(0, 1 + ((4 - tdt.getDay() + 7) % 7));
         }
-        week_num = 1 + Math.ceil((firstThursday - tdt) / 604800000);
+        week_num = Math.ceil((firstThursday - tdt) / 604800000);
         if(week_num.toString().length == 1){
           console.log("gothere "+ week_num.toString());
           return 0+week_num.toString();
