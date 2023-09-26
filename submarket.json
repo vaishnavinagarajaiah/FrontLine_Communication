@@ -1,130 +1,130 @@
 [
  {
-   "SUBMARKET_NAME": "NEW ENGLAND",
-   "SUBMARKET_ID": 40
+   "Submarket_Name": "NEW ENGLAND",
+   "Submarket_ID": 40
  },
  {
-   "SUBMARKET_NAME": "NORTHEAST-BMB",
-   "SUBMARKET_ID": 134
+   "Submarket_Name": "NORTHEAST-BMB",
+   "Submarket_ID": 134
  },
  {
-   "SUBMARKET_NAME": "EAST NON DSD",
-   "SUBMARKET_ID": 23
+   "Submarket_Name": "EAST NON DSD",
+   "Submarket_ID": 23
  },
  {
-   "SUBMARKET_NAME": "SOUTH ONE WAY SALES",
-   "SUBMARKET_ID": 22
+   "Submarket_Name": "SOUTH ONE WAY SALES",
+   "Submarket_ID": 22
  },
  {
-   "SUBMARKET_NAME": "NORTHERN CA",
-   "SUBMARKET_ID": 109
+   "Submarket_Name": "NORTHERN CA",
+   "Submarket_ID": 109
  },
  {
-   "SUBMARKET_NAME": "CENTRAL SOUTH BMB",
-   "SUBMARKET_ID": 130
+   "Submarket_Name": "CENTRAL SOUTH BMB",
+   "Submarket_ID": 130
  },
  {
-   "SUBMARKET_NAME": "SOUTHERN CA",
-   "SUBMARKET_ID": 111
+   "Submarket_Name": "SOUTHERN CA",
+   "Submarket_ID": 111
  },
  {
-   "SUBMARKET_NAME": "WEST NON-DSD",
-   "SUBMARKET_ID": 118
+   "Submarket_Name": "WEST NON-DSD",
+   "Submarket_ID": 118
  },
  {
-   "SUBMARKET_NAME": "NORTHWEST",
-   "SUBMARKET_ID": 55
+   "Submarket_Name": "NORTHWEST",
+   "Submarket_ID": 55
  },
  {
-   "SUBMARKET_NAME": "CENTRAL SOUTHWEST",
-   "SUBMARKET_ID": 61
+   "Submarket_Name": "CENTRAL SOUTHWEST",
+   "Submarket_ID": 61
  },
  {
-   "SUBMARKET_NAME": "MID ATLANTIC",
-   "SUBMARKET_ID": 13
+   "Submarket_Name": "MID ATLANTIC",
+   "Submarket_ID": 13
  },
  {
-   "SUBMARKET_NAME": "SOUTH DIST US REGION",
-   "SUBMARKET_ID": 24
+   "Submarket_Name": "SOUTH DIST US REGION",
+   "Submarket_ID": 24
  },
  {
-   "SUBMARKET_NAME": "CENTRAL MIDWEST",
-   "SUBMARKET_ID": 5010
+   "Submarket_Name": "CENTRAL MIDWEST",
+   "Submarket_ID": 5010
  },
  {
-   "SUBMARKET_NAME": "EAST OUTLETS",
-   "SUBMARKET_ID": 33
+   "Submarket_Name": "EAST OUTLETS",
+   "Submarket_ID": 33
  },
  {
-   "SUBMARKET_NAME": "CENTRAL OUTLETS",
-   "SUBMARKET_ID": 112
+   "Submarket_Name": "CENTRAL OUTLETS",
+   "Submarket_ID": 112
  },
  {
-   "SUBMARKET_NAME": "ROCKY MOUNTAIN",
-   "SUBMARKET_ID": 37
+   "Submarket_Name": "ROCKY MOUNTAIN",
+   "Submarket_ID": 37
  },
  {
-   "SUBMARKET_NAME": "SOUTHWEST",
-   "SUBMARKET_ID": 50
+   "Submarket_Name": "SOUTHWEST",
+   "Submarket_ID": 50
  },
  {
-   "SUBMARKET_NAME": "BMB WEST",
-   "SUBMARKET_ID": 59
+   "Submarket_Name": "BMB WEST",
+   "Submarket_ID": 59
  },
  {
-   "SUBMARKET_NAME": "CENTRAL NON DSD",
-   "SUBMARKET_ID": 11
+   "Submarket_Name": "CENTRAL NON DSD",
+   "Submarket_ID": 11
  },
  {
-   "SUBMARKET_NAME": "CENTRAL NORTH",
-   "SUBMARKET_ID": 8664
+   "Submarket_Name": "CENTRAL NORTH",
+   "Submarket_ID": 8664
  },
  {
-   "SUBMARKET_NAME": "SOUTH OUTLETS",
-   "SUBMARKET_ID": 28
+   "Submarket_Name": "SOUTH OUTLETS",
+   "Submarket_ID": 28
  },
  {
-   "SUBMARKET_NAME": "WEST OUTLETS",
-   "SUBMARKET_ID": 122
+   "Submarket_Name": "WEST OUTLETS",
+   "Submarket_ID": 122
  },
  {
-   "SUBMARKET_NAME": "FLORIDA",
-   "SUBMARKET_ID": 19
+   "Submarket_Name": "FLORIDA",
+   "Submarket_ID": 19
  },
  {
-   "SUBMARKET_NAME": "SOUTHEAST-BMB",
-   "SUBMARKET_ID": 52
+   "Submarket_Name": "SOUTHEAST-BMB",
+   "Submarket_ID": 52
  },
  {
-   "SUBMARKET_NAME": "CENTRAL SOUTHEAST",
-   "SUBMARKET_ID": 18
+   "Submarket_Name": "CENTRAL SOUTHEAST",
+   "Submarket_ID": 18
  },
  {
-   "SUBMARKET_NAME": "CENTRAL NORTH BMB",
-   "SUBMARKET_ID": 107
+   "Submarket_Name": "CENTRAL NORTH BMB",
+   "Submarket_ID": 107
  },
  {
-   "SUBMARKET_NAME": "SOUTH-NORTHWEST",
-   "SUBMARKET_ID": 60
+   "Submarket_Name": "SOUTH-NORTHWEST",
+   "Submarket_ID": 60
  },
  {
-   "SUBMARKET_NAME": "BUTTERKRUST",
-   "SUBMARKET_ID": 77
+   "Submarket_Name": "BUTTERKRUST",
+   "Submarket_ID": 77
  },
  {
-   "SUBMARKET_NAME": "CAPITOL",
-   "SUBMARKET_ID": 44
+   "Submarket_Name": "CAPITOL",
+   "Submarket_ID": 44
  },
  {
-   "SUBMARKET_NAME": "METRO",
-   "SUBMARKET_ID": 80
+   "Submarket_Name": "METRO",
+   "Submarket_ID": 80
  },
  {
-   "SUBMARKET_NAME": "CAROLINAS & GEORGIA",
-   "SUBMARKET_ID": 20
+   "Submarket_Name": "CAROLINAS & GEORGIA",
+   "Submarket_ID": 20
  },
  {
-   "SUBMARKET_NAME": "CENTRAL EAST",
-   "SUBMARKET_ID": 123
+   "Submarket_Name": "CENTRAL EAST",
+   "Submarket_ID": 123
  }
 ]
