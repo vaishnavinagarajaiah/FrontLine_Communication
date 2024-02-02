@@ -1,11 +1,11 @@
 [
   {
-    "Submarket_Name": "MID ATLANTIC NON-DSD",
-    "Submarket_ID": "925"
-  },
-  {
     "Submarket_Name": "SOUTH NON DSD",
     "Submarket_ID": "8773"
+  },
+  {
+    "Submarket_Name": "MID ATLANTIC NON-DSD",
+    "Submarket_ID": "925"
   },
   {
     "Submarket_Name": "METRO",
@@ -16,40 +16,40 @@
     "Submarket_ID": "107"
   },
   {
-    "Submarket_Name": "MIDWEST NORTH",
-    "Submarket_ID": "8664"
-  },
-  {
     "Submarket_Name": "CAROLINAS & GEORGIA",
     "Submarket_ID": "20"
   },
   {
-    "Submarket_Name": "ROCKY MOUNTAIN",
-    "Submarket_ID": "37"
+    "Submarket_Name": "MIDWEST NORTH",
+    "Submarket_ID": "8664"
   },
   {
     "Submarket_Name": "SOUTHEAST WEST",
     "Submarket_ID": "2"
   },
   {
-    "Submarket_Name": "SOUTHEAST NON DSD",
-    "Submarket_ID": "24"
+    "Submarket_Name": "ROCKY MOUNTAIN",
+    "Submarket_ID": "37"
   },
   {
-    "Submarket_Name": "SOUTH CENTRAL",
-    "Submarket_ID": "18"
+    "Submarket_Name": "SOUTHEAST NON DSD",
+    "Submarket_ID": "24"
   },
   {
     "Submarket_Name": "OTHER GB COMPANY",
     "Submarket_ID": "56"
   },
   {
+    "Submarket_Name": "SOUTH BMBEX",
+    "Submarket_ID": "130"
+  },
+  {
     "Submarket_Name": "SOUTHWEST",
     "Submarket_ID": "50"
   },
   {
-    "Submarket_Name": "SOUTH BMBEX",
-    "Submarket_ID": "130"
+    "Submarket_Name": "SOUTH CENTRAL",
+    "Submarket_ID": "18"
   },
   {
     "Submarket_Name": "MID ATLANTIC",
@@ -64,8 +64,8 @@
     "Submarket_ID": "19"
   },
   {
-    "Submarket_Name": "NORTHWEST",
-    "Submarket_ID": "55"
+    "Submarket_Name": "NORTHERN CA",
+    "Submarket_ID": "109"
   },
   {
     "Submarket_Name": "NORTHEAST-BMBEX",
@@ -76,24 +76,24 @@
     "Submarket_ID": "23"
   },
   {
-    "Submarket_Name": "NORTHERN CA",
-    "Submarket_ID": "109"
+    "Submarket_Name": "NORTHWEST",
+    "Submarket_ID": "55"
   },
   {
     "Submarket_Name": "MIDWEST NON DSD",
     "Submarket_ID": "11"
   },
   {
-    "Submarket_Name": "SOUTHEAST-BMBEX",
-    "Submarket_ID": "52"
+    "Submarket_Name": "MIDWEST EAST",
+    "Submarket_ID": "123"
   },
   {
     "Submarket_Name": "NEW ENGLAND",
     "Submarket_ID": "40"
   },
   {
-    "Submarket_Name": "MIDWEST EAST",
-    "Submarket_ID": "123"
+    "Submarket_Name": "SOUTHEAST-BMBEX",
+    "Submarket_ID": "52"
   },
   {
     "Submarket_Name": "SOUTHERN CA",
