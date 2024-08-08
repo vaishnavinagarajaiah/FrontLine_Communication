@@ -128,7 +128,9 @@
   </div>
     </br>
     </form>
-    <table id="communication_table">
+    <table id="communication_table" class="table table-bordered">
+      <thead>
+
       <tr>
         <th>FISCAL WEEK</th>
         <th>SubMarket</th>
@@ -140,8 +142,12 @@
         <th>BL4</th>
         <th>Communication</th>
       </tr>
- 
+      </thead>
+      <tbody>
+
+      </tbody>
     </table>
+
     <div class="row">
         <div class="col-md-6">
             <button id="delete_row" class="btn btn-default btn-block" style="background-color: rgb(235, 8, 8);width: 50%;color: white">
@@ -155,6 +161,7 @@
       </div>
     </div>
     <table id="communication_table_export" style="visibility: hidden">
+      <thead>
         <tr>
           <th>FISCAL WEEK</th>
           <th>SubMarket</th>
@@ -166,6 +173,10 @@
           <th>BL4</th>
           <th>Communication</th>
         </tr>
+      </thead>
+      <tbody>
+
+      </tbody>
    
       </table>
   </br>
@@ -329,14 +340,16 @@
         
 
        //Append names to visible table
-       if(submarket_text.length >0 && BL_text.length > 0 && communication_text.length > 0 ){
-        $('#communication_table tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_text+'</td><td>'+al4_text+'</td><td>'+al3_text+'</td><td>'+al2_text+'</td><td></td><td></td><td>'+ al1_text + '</td><td></td><td>' +BL_text+'</td><td>'+communication_text+'</td></tr>');
+       if (submarket_text.length > 0 && BL_text.length > 0 && communication_text.length > 0) {
+        $('#communication_table tbody').append('<tr><td>' + planweek_text + '</td><td>' + submarket_text + '</td><td>' + al4_text + '</td><td>' + al3_text + '</td><td>' + al2_text + '</td><td>' + al1_text + '</td><td></td><td>' + BL_text + '</td><td>' + communication_text + '</td></tr>'); 
+       
         //$('#communication_table tr:last').after('<tr><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td></tr>');
+        
         //Append id's to invisible table
-        $('#communication_table_export tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_id+'</td><td>'+al4_id+'</td><td>'+al3_id+'</td><td>'+al2_id+'</td><td>'+al1_id+'</td><td></td><td>'+BL_id+'</td><td>'+communication_text+'</td></tr>');
-      }
-      else{
-        alert("Submarket, Brand Level, and Communication Message are required.");
+        
+        $('#communication_table_export tbody').append('<tr><td>' + planweek_text + '</td><td>' + submarket_id + '</td><td>' + al4_id + '</td><td>' + al3_id + '</td><td>' + al2_id + '</td><td>' + al1_id + '</td><td></td><td>' + BL_id + '</td><td>' + communication_text + '</td></tr>'); // New Line
+  } else {
+    alert("Submarket, Brand Level, and Communication Message are required.");
       }
       }
     </script>
