@@ -95,6 +95,13 @@
         <div id="AL2collapse" class="collapse">
           <select id="al2" multiple="multiple" size="10" name="al2"> </select>
         </div>
+      <h3 data-toggle="collapse" data-target="#AL1collapse" style="color:blue; text-decoration: underline;">
+          Choose Account Level 1 (Click to expand / collapse)
+      </h3>
+      <div id="AL1collapse" class="collapse">
+          <select id="al1" multiple="multiple" size="10" name="al1"> </select>
+      </div>
+        
       <h3>Choose Brands - Required</h3>
       <select id="brand" multiple="multiple" size="10" name="brand"> </select>
       <div class="row">
@@ -171,6 +178,7 @@
       let al4 = $("#al4");
       let al3 = $("#al3");
       let al2 = $("#al2");
+      let al1 = $("#al1");
 
       // URL consstants
       const submarket_url = "submarket.json";
@@ -178,6 +186,7 @@
       const al4_url = "al4.json";
       const al3_url = "al3.json";
       const al2_url = "al2.json";
+      const al1_url = "al1.json";
 
       // Populate dropdown with list of Submarkets
       $.getJSON(submarket_url, function (data) {
@@ -230,6 +239,20 @@
 
         al2.bootstrapDualListbox();
       });
+
+      //AL1
+      $.getJSON(al1_url, function (data) {
+        $.each(data, function (key, entry) {
+          al1.append(
+            $("<option></option>")
+              .attr("value", entry.CUST_LEVEL1_ID)
+              .text(entry.CUST_LEVEL1_NAME)
+          );
+        });
+
+        al1.bootstrapDualListbox();
+      });
+
       // Populate dropdown with list of Brand
       $.getJSON(brand_url, function (data) {
         $.each(data, function (key, entry) {
@@ -273,29 +296,41 @@
         var al4_text = $('#al4').find('option:selected').toArray().map(item => item.text).join(';');
         var al3_text = $('#al3').find('option:selected').toArray().map(item => item.text).join(';');
         var al2_text = $('#al2').find('option:selected').toArray().map(item => item.text).join(';');
+        var al1_text = $('#al1').find('option:selected').toArray().map(item => item.text).join(';');
         var BL_text = $('#brand').find('option:selected').toArray().map(item => item.text).join(';');
         var communication_text = $('#communication_text').val();
         var submarket_id = $('#submarket').find('option:selected').toArray().map(item => item.value).join(';');
         var al4_id = $('#al4').find('option:selected').toArray().map(item => item.value).join(';');
         var al3_id = $('#al3').find('option:selected').toArray().map(item => item.value).join(';');
         var al2_id = $('#al2').find('option:selected').toArray().map(item => item.value).join(';');
+        var al1_id = $('#al1').find('option:selected').toArray().map(item => item.text).join(';');
         var BL_id = $('#brand').find('option:selected').toArray().map(item => item.value).join(';');
         //console.log(planweek_text.concat(submarket_text,al4_text,al3_text,BL_text,communication_text))
 
         //Allow only the lowest AL
-        if(al2_id.length > 0){
+
+      if (al1_id.length > 0) {
+        al4_id = '';
+        al4_text = '';
+        al3_id = '';
+        al3_text = '';
+         al2_id = '';
+         al2_text = '';
+        } else if (al2_id.length > 0) {
           al4_id = '';
           al4_text = '';
           al3_id = '';
           al3_text = '';
-        }
-        if(al3_id.length > 0){
+        } else if (al3_id.length > 0) {
           al4_id = '';
-          al4_text = '';
-        }
+           al4_text = '';
+        }   
+
+        
+
        //Append names to visible table
        if(submarket_text.length >0 && BL_text.length > 0 && communication_text.length > 0 ){
-        $('#communication_table tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_text+'</td><td>'+al4_text+'</td><td>'+al3_text+'</td><td>'+al2_text+'</td><td></td><td></td><td>'+BL_text+'</td><td>'+communication_text+'</td></tr>');
+        $('#communication_table tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_text+'</td><td>'+al4_text+'</td><td>'+al3_text+'</td><td>'+al2_text+'</td><td></td><td></td><td>'+ al1_text + '</td><td></td><td>' +BL_text+'</td><td>'+communication_text+'</td></tr>');
         //$('#communication_table tr:last').after('<tr><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td></tr>');
         //Append id's to invisible table
         $('#communication_table_export tr:last').after('<tr><td>'+planweek_text+'</td><td>'+submarket_id+'</td><td>'+al4_id+'</td><td>'+al3_id+'</td><td>'+al2_id+'</td><td></td><td></td><td>'+BL_id+'</td><td>'+communication_text+'</td></tr>');
