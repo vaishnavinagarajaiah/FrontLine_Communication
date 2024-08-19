@@ -1,0 +1,31 @@
+// Function to ensure only the lowest AL is selected
+function allowOnlyLowestAL() {
+  if (al1_id.length > 0) {
+    al4_id = '';
+    al4_text = '';
+    al3_id = '';
+    al3_text = '';
+    al2_id = '';
+    al2_text = '';
+  } else if (al2_id.length > 0) {
+    al4_id = '';
+    al4_text = '';
+    al3_id = '';
+    al3_text = '';
+  } else if (al3_id.length > 0) {
+    al4_id = '';
+    al4_text = '';
+  }
+}
+
+$(document).ready(function() {
+  // Attach the function to change events of account level inputs
+  $('#al1, #al2, #al3, #al4').on('change', function() {
+    // Ensure only the lowest AL is selected whenever any account level changes
+    al1_id = $('#al1').val();
+    al2_id = $('#al2').val();
+    al3_id = $('#al3').val();
+    al4_id = $('#al4').val();
+    allowOnlyLowestAL();
+  });
+});
