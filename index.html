@@ -317,7 +317,10 @@
         var al1_id = $('#al1').find('option:selected').toArray().map(item => item.value).join(';');
         var BL_id = $('#brand').find('option:selected').toArray().map(item => item.value).join(';');
         //console.log(planweek_text.concat(submarket_text,al4_text,al3_text,BL_text,communication_text))
-
+        console.log("Selected Data:", {
+        planweek_text, submarket_text, al4_text, al3_text, al2_text, al1_text, BL_text, communication_text,
+        submarket_id, al4_id, al3_id, al2_id, al1_id, BL_id
+        });
         //Allow only the lowest AL
 
       if (al1_id.length > 0) {
@@ -337,18 +340,20 @@
            al4_text = '';
         }   
 
-        
+        // Log the content before appending
+        console.log("Adding to Visible Table:", { submarket_text, BL_text, communication_text });
 
        //Append names to visible table
        if (submarket_text.length > 0 && BL_text.length > 0 && communication_text.length > 0) {
         $('#communication_table tbody').append('<tr><td>' + planweek_text + '</td><td>' + submarket_text + '</td><td>' + al4_text + '</td><td>' + al3_text + '</td><td>' + al2_text + '</td><td>' + al1_text + '</td><td></td><td>' + BL_text + '</td><td>' + communication_text + '</td></tr>'); 
        
         //$('#communication_table tr:last').after('<tr><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td><td>t</td></tr>');
-        
+        console.log("Adding to Export Table:", { submarket_id, al4_id, al3_id, al2_id, al1_id, BL_id, communication_text });
         //Append id's to invisible table
         
         $('#communication_table_export tbody').append('<tr><td>' + planweek_text + '</td><td>' + submarket_id + '</td><td>' + al4_id + '</td><td>' + al3_id + '</td><td>' + al2_id + '</td><td>' + al1_id + '</td><td></td><td>' + BL_id + '</td><td>' + communication_text + '</td></tr>'); // New Line
-  } else {
+        console.log("Row added to tables successfully.");
+      } else {
     alert("Submarket, Brand Level, and Communication Message are required.");
       }
       }

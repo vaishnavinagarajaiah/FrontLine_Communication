@@ -1,5 +1,6 @@
 // Function to ensure only the lowest AL is selected
 function allowOnlyLowestAL() {
+  console.log("Before Adjustment:", { al1_id, al2_id, al3_id, al4_id });
   if (al1_id.length > 0) {
     al4_id = '';
     al4_text = '';
@@ -16,6 +17,7 @@ function allowOnlyLowestAL() {
     al4_id = '';
     al4_text = '';
   }
+  console.log("After Adjustment:", { al1_id, al2_id, al3_id, al4_id });
 }
 
 $(document).ready(function() {
@@ -26,6 +28,7 @@ $(document).ready(function() {
     al2_id = $('#al2').val();
     al3_id = $('#al3').val();
     al4_id = $('#al4').val();
+    console.log("AL Change Detected:", { al1_id, al2_id, al3_id, al4_id });
     allowOnlyLowestAL();
   });
 });
